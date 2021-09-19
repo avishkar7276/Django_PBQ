@@ -1,0 +1,31 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="col-sm-10">
+  <br> 
+  <h1>
+    <a href="{% url 'photo_site' %}" class="btn btn-primary">&nbsp; &nbsp;&nbsp; &nbsp;Photo Site &nbsp; &nbsp;&nbsp; &nbsp;</a>&nbsp; &nbsp;
+    <a href="{% url 'blog_site' %}" class="btn btn-info">&nbsp; &nbsp;&nbsp; &nbsp;Blog Site &nbsp; &nbsp;&nbsp; &nbsp;</a>&nbsp; &nbsp;
+      <a href="#" class="btn btn-success">&nbsp; &nbsp;&nbsp; &nbsp;QQQQ  Site &nbsp; &nbsp;&nbsp; &nbsp;</a>&nbsp; &nbsp;
+  </h1>
+  <!--<h3 class="text-white my-5">Home Page</h3>-->
+ <h4 class="text-center alert alert-info mt-3">Show Blog Information</h4>
+  {% for post in posts %}
+    <div class="jumbotron jumbotron-fluid jumbo-color">
+      <div class="container">
+        <h1 class="display-4 font-weight-bold">{{post.Title}}</h1>
+		<h4>Category : {{post.Category.name}}</h4>
+        <p class="card-text text-muted h6"> {{post.Time}}| {{ post.Date}} </p>
+        <p class="lead">{{post.Content}}</p>
+        
+      </div>
+    </div>
+  {% endfor %}
+  
+  
+  
+  
+  
+
+{% endblock content %}
